@@ -26,10 +26,8 @@ document.querySelctor('[name='message']').addEventListener('input',(event)=>{
 
 如下圖所示Vue是一個以**MVVM(model、viewModel、view)模型**，與一般我們認識的MVC架構中的Model對應DB資料庫有所不同，這裡Model指的是前端我們定義的資料，viewModel則包含我們引用創建的Vue實例，裡面包含著一些資料更新邏輯，view則對應到真正網頁上畫面的DOM。
 
-![mvvm](https://hackmd.io/_uploads/BJdjZ3Ysa.png)
-圖片來源: https://012.vuejs.org/guide/
-
-
+![mvvm](https://github.com/yhosutun2490/Vue3_Tech/assets/71853581/f56db56d-eea8-4830-8309-9cfa221254b9)
+圖片來源: https://012.vuejs.org/guide/ 
 
 * ### Vue的實例 (Vue Instance)
 在Vue2 版本中我們會使用new Vue()來創建一個Vue實例，在Vue3版本中則改用createApp()來創建Vue的實例，可以使用CDN script方式引用，或透過npm安裝Vue套件。
@@ -117,8 +115,9 @@ Vue SFC檔案(template、script和style標籤)通常需要經過 **編譯(compil
 * 虛擬DOM (Virtual DOM)
 * 掛載入真實網頁上 - mount to Real DOM
 
+<img width="688" alt="render-pipeline sMZx_5WY" src="https://github.com/yhosutun2490/Vue3_Tech/assets/71853581/984a0057-2971-4636-9a07-78eef957b61c">
 
-![render-pipeline.sMZx_5WY](https://hackmd.io/_uploads/S1Q3SRtsa.png)
+圖片來源: https://vuejs.org/guide/extras/rendering-mechanism.html
 
 #### SFC compiler 編譯過程簡介
 常常利用Vue SFC檔案開發，可以在template裡撰寫類似HTML的形式開發畫面HTML結構，應該常常想我是在寫真正的HTML嗎?，我們用下列程式碼來思考一下:
@@ -155,7 +154,8 @@ https://vuejs.org/guide/extras/rendering-mechanism.html#virtual-dom
 
 **這裡也可以了解到Vue其實也有引入現代框架Virutal DOM概念，簡單來說模板編譯完成後會形成Virtual DOM Tree，框架會比較前後差異後，用最小幅度有效率地去操作網頁真實DOM的更新**。
 
-![1.f0570125](https://hackmd.io/_uploads/SJiJz1coT.png)
+![渲染過程](https://github.com/yhosutun2490/Vue3_Tech/assets/71853581/9f7093e7-610a-45b0-9eca-9bda627ae0b8)
+
 圖片來源:　https://vue-js.com/learn-vue/complie/#_3-%E6%95%B4%E4%BD%93%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B
 
 在學習其他框架像React等一定也聽過**比較differ**或**協調reconciliation**這類專有名詞，是發生在當有資料或模板更新時新舊Virtual DOM比較過程。
@@ -167,7 +167,8 @@ https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram
 * 首先引入Vue創建實例後，我們在SFC檔案裡面可能會定義一些資料表定ref()、reactive()等，這些是包在Vue實例下的方法，我們必須等它創建完實例後才能使用，這是setup()生命週期函式基本用法。
 * 之後SFC檔案中的tempalte、script標籤才進入編譯，告訴渲染函式我該形成怎樣的vnode大節點物件，描述什麼樣的特徵 ex: 資料綁定、遇到那些vue提供的方法等。
 
-![lifecycle.DLmSwRQE](https://hackmd.io/_uploads/r1W-t1qs6.png)
+![lifecycle DLmSwRQE](https://github.com/yhosutun2490/Vue3_Tech/assets/71853581/b06de896-46b4-4c4c-86fb-77b5732be526)
+
 圖片來源: https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram
 
 小疑問:
